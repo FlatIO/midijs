@@ -6,10 +6,10 @@ This module provides a high-level API for working with Standard MIDI and
 General MIDI events that are sent through MIDI inputs and outputs, or
 read from a file.
 
-[![npm version](https://img.shields.io/npm/v/midijs.svg?style=flat-square)](https://www.npmjs.com/package/midijs)
-[![npm downloads](https://img.shields.io/npm/dm/midijs.svg?style=flat-square)](https://www.npmjs.com/package/midijs)
-[![build status](https://img.shields.io/travis/MattouFP/midijs.svg?style=flat-square)](https://travis-ci.org/MattouFP/midijs)
-[![dependencies status](http://img.shields.io/david/mattoufp/midijs.svg?style=flat-square)](https://david-dm.org/MattouFP/midijs)
+[![npm version](https://img.shields.io/npm/v/@flat/midijs.svg?style=flat-square)](https://www.npmjs.com/package/@flat/midijs)
+[![npm downloads](https://img.shields.io/npm/dm/@flat/midijs.svg?style=flat-square)](https://www.npmjs.com/package/@flat/midijs)
+[![build status](https://img.shields.io/travis/FlatIO/midijs.svg?style=flat-square)](https://travis-ci.org/FlatIO/midijs)
+[![dependencies status](http://img.shields.io/david/FlatIO/midijs.svg?style=flat-square)](https://david-dm.org/FlatIO/midijs)
 
 ## Install
 
@@ -71,7 +71,7 @@ fs.readFile(path, function (err, data) {
         if (err) {
             throw err;
         }
-        
+
         // file.header contains header data
         // file.tracks contains file tracks
     });
@@ -149,12 +149,12 @@ file.getData(function (err, data) {
     if (err) {
         throw err;
     }
-    
+
     fs.writeFile(path, data, function (err) {
         if (err) {
             throw err;
         }
-        
+
         // file at 'path' now contains binary MIDI data
         // ready to be played by any other MIDI program
         // (or re-read by this module later)
@@ -187,7 +187,7 @@ file.pipe(fs.createWriteStream(path));
 
 ### gm
 
-List of programs numbers associated to instruments and families defined 
+List of programs numbers associated to instruments and families defined
 by the General MIDI standard.
 
 Knowing an instrument's name (as a string) as defined by the
@@ -320,7 +320,7 @@ Constructors of errors that can be emitted by this module.
 
 ## Contributing
 
-All contributions are welcome! 
+All contributions are welcome!
 In order to have a consistent repo, we however ask you
 to comply to the following conventions
 whenever possible.
