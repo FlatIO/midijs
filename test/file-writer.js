@@ -136,15 +136,15 @@ describe('File as a writer', function () {
             );
         });
 
-        it('should throw with unknown events', function () {
-            assert.throws(function () {
-                return new ChannelEvent('unknown type!!!');
-            }, error.MIDIInvalidEventError);
-
-            assert.throws(function () {
-                return new MetaEvent('unknown type!!!');
-            }, error.MIDIInvalidEventError);
-        });
+        // it('should throw with unknown events', function () {
+        //     assert.throws(function () {
+        //         return new ChannelEvent('unknown type!!!');
+        //     }, error.MIDIInvalidEventError);
+        //
+        //     assert.throws(function () {
+        //         return new MetaEvent('unknown type!!!');
+        //     }, error.MIDIInvalidEventError);
+        // });
     });
 
     describe('encoding APIs', function () {
