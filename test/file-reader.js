@@ -23,6 +23,7 @@ var filePath = genericFilePath + '.mid';
 var undefinedFilePath = genericFilePath + '-invalid-undefined.mid';
 var unknownFilePath = genericFilePath + '-invalid-unknown.mid';
 var invalidMetaFilePath = genericFilePath + '-invalid-meta.mid';
+var extraContentEnd = genericFilePath + '-extra-content-end.mid';
 
 describe('File as a reader', function () {
     describe('loading APIs', function () {
@@ -232,6 +233,24 @@ describe('File as a reader', function () {
                 });
             });
         });
+    });
+
+    describe('ignored extra content', function () {
+      var file;
+
+      before(function (done) {
+          file = new File();
+
+          file.on('error', done);
+          file.on('parsed', done);
+
+          fs.createReadStream(extraContentEnd).pipe(file);
+      });
+
+      it('should skip content after end meta, and correctly paste the file', function () {
+          var tracks = file.getTracks();
+          assert.equal(tracks.length, 2);
+      });
     });
 
     describe('invalid files', function () {
