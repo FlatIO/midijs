@@ -32,13 +32,13 @@
     
     "dependencies": {
         "buffercursor": "0.0.12",
-        "es6-promise": "^2.0.1"
+        "es6-promise": "^4.1.0"
     },
     
     "devDependencies": {
-        "istanbul": "^0.3.5",
-        "jsdoc": "^3.3.0-beta1",
-        "buffer-equal": "0.0.1",
-        "mocha": "^2.1.0"
+        "istanbul": "^0.4.5",
+        "jsdoc": "^3.4.3",
+        "buffer-equal": "1.0.0",
+        "mocha": "^3.3.0"
     }
 }
