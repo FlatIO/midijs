@@ -226,6 +226,10 @@ describe('File as a writer', function () {
                     frames: 20,
                     subframes: 50
                 }),
+                new MetaEvent(MetaEvent.TYPE.KEY_SIGNATURE, {
+                    major: false,
+                    note: -1
+                }),
 
                 new ChannelEvent(ChannelEvent.TYPE.NOTE_ON, {
                     note: 75,
