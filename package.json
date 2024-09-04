@@ -5,14 +5,15 @@
     "license": "MIT",
     "main": "index.js",
     "scripts": {
-        "test": "./node_modules/.bin/mocha -R spec",
+        "test": "check-dts && mocha -R spec",
         "coverage": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec",
         "docs": "./node_modules/.bin/jsdoc --readme README.md package.json lib index.js -r"
     },
     "repository": {
         "type": "git",
-        "url": "http://github.com/MattouFP/midijs.git"
+        "url": "https://github.com/FlatIO/midijs.git"
     },
+    "types": "midijs.d.ts",
     "keywords": [
         "midi",
         "files",
@@ -30,9 +31,12 @@
         "es6-promise": "^4.1.0"
     },
     "devDependencies": {
+        "@types/node": "^22.5.3",
+        "@types/verror": "^1.10.10",
+        "buffer-equal": "1.0.0",
+        "check-dts": "^0.8.2",
         "istanbul": "^0.4.5",
         "jsdoc": "^3.4.3",
-        "buffer-equal": "1.0.0",
         "mocha": "^3.3.0"
     }
 }
