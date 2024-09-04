@@ -11,8 +11,9 @@
     },
     "repository": {
         "type": "git",
-        "url": "http://github.com/MattouFP/midijs.git"
+        "url": "https://github.com/FlatIO/midijs.git"
     },
+    "types": "midijs.d.ts",
     "keywords": [
         "midi",
         "files",
@@ -30,9 +31,10 @@
         "es6-promise": "^4.1.0"
     },
     "devDependencies": {
+        "@types/verror": "^1.10.10",
+        "buffer-equal": "1.0.0",
         "istanbul": "^0.4.5",
         "jsdoc": "^3.4.3",
-        "buffer-equal": "1.0.0",
         "mocha": "^3.3.0"
     }
 }
