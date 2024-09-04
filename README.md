@@ -1,4 +1,4 @@
-# midijs
+# @flat/midijs
 
 Read and write Standard MIDI files and enable communication with MIDI devices!
 
@@ -6,15 +6,13 @@ This module provides a high-level API for working with Standard MIDI and
 General MIDI events that are sent through MIDI inputs and outputs, or
 read from a file.
 
-[![npm version](https://img.shields.io/npm/v/@flat/midijs.svg?style=flat-square)](https://www.npmjs.com/package/@flat/midijs)
-[![npm downloads](https://img.shields.io/npm/dm/@flat/midijs.svg?style=flat-square)](https://www.npmjs.com/package/@flat/midijs)
-[![build status](https://img.shields.io/travis/FlatIO/midijs.svg?style=flat-square)](https://travis-ci.org/FlatIO/midijs)
-[![dependencies status](http://img.shields.io/david/FlatIO/midijs.svg?style=flat-square)](https://david-dm.org/FlatIO/midijs)
+[![npm version](https://img.shields.io/npm/v/@flat/midijs.svg)](https://www.npmjs.com/package/@flat/midijs)
+[![build status](https://github.com/FlatIO/midijs/actions/workflows/node.js.yml/badge.svg)](https://github.com/FlatIO/midijs)
 
 ## Install
 
 ```sh
-npm install --save midijs
+npm install --save @flat/midijs
 ```
 
 ### Run tests
@@ -49,7 +47,7 @@ Read or write data from or to a Standard MIDI file.
 Creating an empty file:
 
 ```js
-var MIDI = require('midijs');
+var MIDI = require('@flat/midijs');
 var file = new MIDI.File();
 
 // file.header contains default header data
@@ -59,7 +57,7 @@ var file = new MIDI.File();
 Loading data from an existing file, using the Buffer API:
 
 ```js
-var MIDI = require('midijs');
+var MIDI = require('@flat/midijs');
 var fs = require('fs');
 
 fs.readFile(path, function (err, data) {
@@ -81,7 +79,7 @@ fs.readFile(path, function (err, data) {
 Or using the Stream API:
 
 ```js
-var MIDI = require('midijs');
+var MIDI = require('@flat/midijs');
 var fs = require('fs');
 
 var file = new MIDI.File();
@@ -101,7 +99,7 @@ fs.createReadStream(path).pipe(file);
 Changing elements in a file:
 
 ```js
-var MIDI = require('midijs');
+var MIDI = require('@flat/midijs');
 var File = MIDI.File;
 
 /** edit header **/
@@ -138,7 +136,7 @@ track.addEvent(1, // position (optional)
 Saving data to a SMF file, using the Buffer API:
 
 ```js
-var MIDI = require('midijs');
+var MIDI = require('@flat/midijs');
 var fs = require('fs');
 
 var file = new MIDI.File();
@@ -165,7 +163,7 @@ file.getData(function (err, data) {
 Or using the Stream API:
 
 ```js
-var MIDI = require('midijs');
+var MIDI = require('@flat/midijs');
 var fs = require('fs');
 
 var file = new MIDI.File();
@@ -233,7 +231,7 @@ Otherwise, it is fullfilled with a driver instance.
 Attempting to connect:
 
 ```js
-var MIDI = require('midijs');
+var MIDI = require('@flat/midijs');
 
 MIDI.connect()
     .then(function (driver) {
@@ -249,7 +247,7 @@ of devices that are currently plugged in, and emits `connect` or
 `disconnect` events whether one of them is connected or disconnected.
 
 ```js
-var MIDI = require('midijs');
+var MIDI = require('@flat/midijs');
 
 // driver.inputs is a list of current inputs
 // driver.outputs is a list of current outputs
@@ -266,7 +264,7 @@ driver.on('connect', function (port) {
 You can send events to an output:
 
 ```js
-var MIDI = require('midijs');
+var MIDI = require('@flat/midijs');
 var ChannelEvent = MIDI.File.ChannelEvent;
 
 output.send(new ChannelEvent(ChannelEvent.TYPE.NOTE_ON, {
@@ -278,7 +276,7 @@ output.send(new ChannelEvent(ChannelEvent.TYPE.NOTE_ON, {
 And wait for events from an input:
 
 ```js
-var MIDI = require('midijs');
+var MIDI = require('@flat/midijs');
 var ChannelEvent = MIDI.File.ChannelEvent;
 
 input.on('event', function (event) {
@@ -293,7 +291,7 @@ Events from the default input will bubble to the driver and events
 sent to the driver will be sent to the default output.
 
 ```js
-var MIDI = require('midijs');
+var MIDI = require('@flat/midijs');
 
 driver.setInput(driver.inputs[2]); // by position
 driver.setInput('Input id'); // by unique input ID
