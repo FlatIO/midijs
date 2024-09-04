@@ -1,3 +1,26 @@
+declare module '@flat/midijs' {
+  import { Driver } from '@flat/midijs/lib/connect/driver';
+  import { Input } from '@flat/midijs/lib/connect/input';
+  import { Output } from '@flat/midijs/lib/connect/output';
+  import { File } from '@flat/midijs/lib/file';
+  import { Track } from '@flat/midijs/lib/file/track';
+  import { Event, MetaEvent, SysexEvent, ChannelEvent } from '@flat/midijs/lib/file/event';
+  import { Header } from '@flat/midijs/lib/file/header';
+
+  export {
+      Driver,
+      Input,
+      Output,
+      File,
+      Track,
+      Event,
+      MetaEvent,
+      SysexEvent,
+      ChannelEvent,
+      Header,
+  };
+}
+
 declare module '@flat/midijs/lib/gm' {
   /**
    * Check if a program is in a family of instruments.
@@ -323,8 +346,21 @@ declare module '@flat/midijs/lib/file/event' {
    * Represents a meta event in MIDI which is not transmitted to MIDI devices.
    */
   class MetaEvent extends Event {
-      constructor(type: any, specs?: any);
-      type: any;
+    constructor(type: number, specs?: object, delay?: number);
+    static TYPE: {
+      SEQUENCE_NUMBER: number;
+      SEQUENCE_NAME: number;
+      MIDI_CHANNEL: number;
+      INSTRUMENT_NAME: number;
+      TEXT: number;
+      SET_TEMPO: number;
+      TIME_SIGNATURE: number;
+      KEY_SIGNATURE: number;
+      END_OF_TRACK: number;
+    };
+    type: number;
+    data: number[];
+    time: number;
   }
 
   /**
@@ -339,24 +375,21 @@ declare module '@flat/midijs/lib/file/event' {
    * Represents a channel-specific MIDI event.
    */
   class ChannelEvent extends Event {
-      constructor(type: number, specs?: any, channel?: number, delay?: number);
-      type: number;
-      channel: number;
-  }
-
-  /**
-   * Enumeration of channel event types.
-   */
-  namespace ChannelEvent {
-      enum TYPE {
-          NOTE_OFF = 8,
-          NOTE_ON = 9,
-          NOTE_AFTERTOUCH = 10,
-          CONTROLLER = 11,
-          PROGRAM_CHANGE = 12,
-          CHANNEL_AFTERTOUCH = 13,
-          PITCH_BEND = 14
-      }
+    constructor(type: number, specs: object, channel: number, delay?: number);
+    static TYPE: {
+      NOTE_OFF: number;
+      NOTE_ON: number;
+      KEY_AFTERTOUCH: number;
+      CONTROLLER: number;
+      PROGRAM_CHANGE: number;
+      CHANNEL_AFTERTOUCH: number;
+      PITCH_BEND: number;
+    };
+    type: number;
+    channel: number;
+    param1: number;
+    param2: number;
+    time: number;
   }
 }
 
