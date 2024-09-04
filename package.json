@@ -1,6 +1,6 @@
 {
     "name": "@flat/midijs",
-    "version": "0.14.2",
+    "version": "0.15.0",
     "description": "Read and write Standard MIDI files and enable communication with MIDI devices!",
     "license": "MIT",
     "main": "index.js",
@@ -27,8 +27,7 @@
         "url": "https://github.com/MattouFP"
     },
     "dependencies": {
-        "buffercursor": "0.0.12",
-        "es6-promise": "^4.1.0"
+        "buffercursor": "0.0.12"
     },
     "devDependencies": {
         "@types/node": "^22.5.3",

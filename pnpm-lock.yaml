@@ -11,9 +11,6 @@ importers:
       buffercursor:
         specifier: 0.0.12
         version: 0.0.12
-      es6-promise:
-        specifier: ^4.1.0
-        version: 4.2.8
     devDependencies:
       '@types/node':
         specifier: ^22.5.3
@@ -168,9 +165,6 @@ packages:
 
   entities@2.1.0:
     resolution: {integrity: sha512-hCx1oky9PFrJ611mf0ifBLBRW8lUUVRlFolb5gWRfIELabBlbp9xZvrqZLZAs+NxFnbfQoeGd8wDkygjg7U85w==}
-
-  es6-promise@4.2.8:
-    resolution: {integrity: sha512-HJDGx5daxeIvxdBxvG2cb9g4tEvwIk3i8+nhX0yGrYmZUzbkdg8QbDevheDB8gd0//uPj4c1EQua8Q+MViT0/w==}
 
   escape-string-regexp@1.0.5:
     resolution: {integrity: sha512-vbRorB5FUQWvla16U8R/qgaFIya2qGzwDrNmCZuYKrbdSUMG6I1ZCGQRefkRVhuOkIGVne7BQ35DSfo1qvJqFg==}
@@ -651,8 +645,6 @@ snapshots:
   diff@3.2.0: {}
 
   entities@2.1.0: {}
-
-  es6-promise@4.2.8: {}
 
   escape-string-regexp@1.0.5: {}
 
