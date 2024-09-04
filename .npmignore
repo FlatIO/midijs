@@ -1,0 +1,6 @@
+.github
+.settings
+.eslintrc
+.gitattributes
+node_modules
+test
